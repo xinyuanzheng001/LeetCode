@@ -9,15 +9,19 @@ var findDifferentBinaryString = function(nums) {
         if(string.length === n) {
             if(nums.indexOf(string) === -1) {
                 result.push(string);
+                return string;
             }
             return;
         }
         for(let i = 0; i < 2; i++) {
             string += String(i);
-            helper(string);
+            let a = helper(string);
+            if(a !== undefined) {
+                return a;
+            }
             string = string.slice(0, string.length - 1);
         }
     }
-    helper('');
-    return result[0];
+    // helper('');
+    return helper('');
 };
