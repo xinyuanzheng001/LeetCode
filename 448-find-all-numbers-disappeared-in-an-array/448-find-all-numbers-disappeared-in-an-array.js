@@ -4,9 +4,10 @@
  */
 var findDisappearedNumbers = function(nums) {
     let result = [];
-    for(let i = 1; i < nums.length+1; i++) {
-        result.push(i);
+    for(let i = 1; i < nums.length + 1; i++){
+        if(nums.indexOf(i) === -1) {
+            result.push(i)
+        }
     }
-    result = result.filter(x => nums.indexOf(x) === -1);
     return result;
 };
