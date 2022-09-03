@@ -7,6 +7,6 @@ var findDisappearedNumbers = function(nums) {
     for(let i = 1; i < nums.length+1; i++) {
         result.push(i);
     }
-    result = result.filter(x => !nums.includes(x));
+    result = result.filter(x => nums.indexOf(x) === -1);
     return result;
 };
