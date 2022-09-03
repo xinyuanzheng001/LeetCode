@@ -4,11 +4,9 @@
  */
 var findDifferentBinaryString = function(nums) {
     let n = nums.length;
-    let result = [];
     let helper = function(string) {
         if(string.length === n) {
             if(nums.indexOf(string) === -1) {
-                result.push(string);
                 return string;
             }
             return;
@@ -22,6 +20,5 @@ var findDifferentBinaryString = function(nums) {
             string = string.slice(0, string.length - 1);
         }
     }
-    // helper('');
     return helper('');
 };
