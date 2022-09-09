@@ -34,10 +34,10 @@ var longestValidParentheses = function(s) {
             if(leftPar.length === (j - i + 1) / 2) {
                 if(helper(s.slice(i, j+1))) {
                     maxCount = Math.max(maxCount, j - i + 1)
-                    if(s[j+1] === ')') {
-                        i = j
-                        break;
-                    }
+                }
+                if(s[j+1] === ')') {
+                    i = j
+                    break;
                 }
             }
         }
